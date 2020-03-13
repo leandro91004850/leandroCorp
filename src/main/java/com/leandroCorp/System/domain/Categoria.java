@@ -1,11 +1,12 @@
 package com.leandroCorp.System.domain;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*;
 
 @Entity
 public class Categoria  implements Serializable{
@@ -15,7 +16,11 @@ public class Categoria  implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY) // *IDENTITY* DEPENDE DO BANCO DE DADOS QUE VAI ACEITAR OU NÃO ESSE TIPO
 	private Integer id;
 	private String nome;
-	
+
+	@JsonManagedReference
+	@ManyToMany(mappedBy="categorias") // COMO FOI FEITO O MAPEAMENTO DO OUTRO LADO SO INSERIMOS ESSA ANOTAÇÃO
+	private List<Produto> produtos	= new ArrayList<>();//ASSOCIAÇÕES -- UMA CATEGORIA EXISTE VARIOS PRODUTOS
+
 	public Categoria() {
 	}
 
@@ -23,6 +28,14 @@ public class Categoria  implements Serializable{
 		super();
 		this.id = id;
 		this.nome = nome;
+	}
+
+	public List<Produto> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Produto> produtos) {
+		this.produtos = produtos;
 	}
 
 	public Integer getId() {

@@ -14,8 +14,7 @@ public class CategoriaController {
 
 	@Autowired
 	private CategoriaRepository service;
-	
-	
+
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)
 	public ModelAndView Categoria(@PathVariable("id") int id) {
 		ModelAndView mv = new ModelAndView("categoria");
@@ -23,6 +22,10 @@ public class CategoriaController {
 		
 		return mv;
 	}
-	
+
+	@RequestMapping("/nutricao")
+	public String AparecidaNutri(){
+		return "aparecidaNutricao/aparecida";
+	}
 	
 }
