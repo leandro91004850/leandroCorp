@@ -22,10 +22,5 @@ public class CategoriaController {
 		
 		return mv;
 	}
-
-	@RequestMapping("/nutricao")
-	public String AparecidaNutri(){
-		return "aparecidaNutricao/aparecida";
-	}
 	
 }

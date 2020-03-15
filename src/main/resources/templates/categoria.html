@@ -24,7 +24,7 @@
 					</thead>
 					<tbody>
 						<tr th:each="categoria : ${categoria}">
-							<td th:text="${categoria.id}"></td>
+							<td class="categoria" th:text="${categoria.id}"></td>
 							<td th:text="${categoria.nome}"></td>
 
 					
@@ -35,5 +35,6 @@
 		</div>
 
 	</div>
+	<script src="js/principal.js"></script>
 </body>
 </html>
