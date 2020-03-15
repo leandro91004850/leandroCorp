@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Aparecida Nutrição</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+	<body>
+
+		<header>
+			<div class="container">
+				<h1 class= "titulo">Aparecida Nutrição</h1>
+			</div>
+		</header>
+		<main>
+			<section class="container">
+				<h2>Meus pacientes</h2>
+				<table>
+					<thead>
+						<tr>
+							<th>Nome</th>
+							<th>Peso(kg)</th>
+							<th>Altura(m)</th>
+							<th>Gordura Corporal(%)</th>
+							<th>IMC</th>
+						</tr>
+					</thead>
+					<tbody th:each="nutricao : ${nutricao}" id="tabela-pacientes">
+						<tr class="paciente" id="primeiro-paciente">
+							<td class="info-nome" th:text="${nutricao.nome}"></td>
+							<td class="info-peso" th:text="${nutricao.peso}"></td>
+							<td class="info-altura" th:text="${nutricao.altura}"></td>
+							<td class="info-gordura" th:text="${nutricao.gordura}"></td>
+							<td class="info-imc">0</td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</section>
+			
+		</main>
+
+
+		<script src="js/principal.js"></script>
+
+	</body>
+</html>

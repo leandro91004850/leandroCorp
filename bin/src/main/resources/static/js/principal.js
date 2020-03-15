@@ -24,14 +24,12 @@ for(var i = 0; i < pacientes.length; i++){
 		console.log("peso invalido");
 		pesoValido = false;
 		tdImc.textContent = "peso inválido";
-		paciente.classList.add("paciente-invalido"); // minha classe expecificada no meu css
 	}
 
 	if(altura <= 0 || altura >= 3.00){
 		console.log("altura invalida");
 		alturaValida = false;
 		tdImc.textContent="altura inválida";
-		paciente.style.backgroundColor="lightcoral";
 	}
 
 
