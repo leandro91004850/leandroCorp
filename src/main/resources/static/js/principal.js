@@ -1,7 +1,13 @@
 var titulo = document.querySelector(".titulo");
 	titulo.textContent = "Aparecida Nutricionista";
 
-var paciente = document.querySelector("#primeiro-paciente");
+
+var pacientes = document.querySelectorAll(".paciente");
+
+
+for(var i = 0; i < pacientes.length; i++){
+	//console.log(pacientes[i]);
+	var paciente = pacientes[i];
 
 	var tdpeso = paciente.querySelector(".info-peso");
 	var peso = tdpeso.textContent; 
@@ -29,9 +35,12 @@ var paciente = document.querySelector("#primeiro-paciente");
 
 	if(alturaValida && pesoValido){ // caso os dois sejam verdadeiros
 		var imc = peso / (altura * altura); 
-		tdImc.textContent = imc;
+		tdImc.textContent = imc.toFixed(2); //controlar o numero de casas decimais
 	
 	}
+
+}
+	
 
 
 
