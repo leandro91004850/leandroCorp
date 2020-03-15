@@ -42,7 +42,12 @@ for(var i = 0; i < pacientes.length; i++){
 	}
 
 }
+
+titulo.addEventListener("click", mostrarMensagem); // escutando o momento do click 
 	
+	function mostrarMensagem(){
+		console.log("ola eu fui clicado!")
+	}
 
 
 
