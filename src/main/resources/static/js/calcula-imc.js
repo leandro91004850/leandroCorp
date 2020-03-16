@@ -1,7 +1,6 @@
 var titulo = document.querySelector(".titulo");
 	titulo.textContent = "Aparecida Nutricionista";
 
-var gordura = document.querySelector(".info-gordura");
 
 var pacientes = document.querySelectorAll(".paciente");
 
@@ -21,21 +20,21 @@ for(var i = 0; i < pacientes.length; i++){
 
 	var tdImc = paciente.querySelector(".info-imc");
 
-	tdpeso.addEventListener("click", clickEvento);
+	paciente.addEventListener('click', function(e) {
+			///alert(e.target.id);
 
-	function clickEvento(){
+			if(e.target.id == peso){
+				console.log("Ops os dois valores sao iguais " + e.target.id);
+			}else{
+				console.log("voce clicou no "+ e.target.id + " o valor do peso e "+peso);
 
-		
-			console.log("o valor ta diferente");
-			console.log(tdpeso);
-			console.log(tdgordura);
-
-		
-	}
-	
+			}
+		  			 
+		});
 
 	var pesoValido = true;
 	var alturaValida = true;
+	var gorduraValida = true;
 
 	if(peso <= 0 || peso >= 1000){
 		console.log("peso invalido");
@@ -51,10 +50,19 @@ for(var i = 0; i < pacientes.length; i++){
 		paciente.style.backgroundColor="lightcoral";
 	}
 
+	// testes
+	if(peso == gordura){
+		console.log("os valores sao iguais");
+		gorduraValida = false;
+		tdImc.textContent="os valores sao iguais";
+		paciente.style.backgroundColor="pink";
+	}
+
 
 	if(alturaValida && pesoValido){ // caso os dois sejam verdadeiros
 		var imc = calculaImc(peso, altura);
 		tdImc.textContent = imc;
+		console.log(tdImc);
 	
 	}
 
@@ -68,3 +76,12 @@ function calculaImc(peso, altura){
 	return imc.toFixed(2); //controlar o numero de casas decimais
 }
 
+
+/*	
+// comparando dois objetos
+var diaDeSemana = "domingo";
+var dia = 'domingo';
+
+if (diaDeSemana == dia){
+  console.log("Hoje é dia de futebol!!!");
+}*/

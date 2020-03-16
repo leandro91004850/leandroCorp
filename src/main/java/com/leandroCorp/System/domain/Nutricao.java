@@ -18,6 +18,7 @@ public class Nutricao implements Serializable {
 	private Integer peso;
 	private Double altura;
 	private Integer gordura;
+	private String teste1;
 	
 	
 	public Integer getId() {
@@ -49,6 +50,12 @@ public class Nutricao implements Serializable {
 	}
 	public void setGordura(Integer gordura) {
 		this.gordura = gordura;
+	}
+	public String getTeste1() {
+		return teste1;
+	}
+	public void setTeste1(String teste1) {
+		this.teste1 = teste1;
 	}
 
 	

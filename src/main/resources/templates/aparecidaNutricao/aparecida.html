@@ -29,7 +29,7 @@
 					<tbody th:each="nutricao : ${nutricao}" id="tabela-pacientes">
 						<tr class="paciente" id="primeiro-paciente">
 							<td class="info-nome" th:text="${nutricao.nome}"></td>
-							<td class="info-peso" th:text="${nutricao.peso}"></td>
+							<td th:id="${nutricao.id}" class="info-peso" th:text="${nutricao.peso}"></td>
 							<td class="info-altura" th:text="${nutricao.altura}"></td>
 							<td class="info-gordura" th:text="${nutricao.gordura}"></td>
 							<td class="info-imc">0</td>
