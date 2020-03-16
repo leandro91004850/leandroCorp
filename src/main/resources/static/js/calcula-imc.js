@@ -60,32 +60,26 @@ for(var i = 0; i < pacientes.length; i++){
 
 }
 
-// escutando no javaScript um evento de click 
-//titulo.addEventListener("click", mostraMensagem); // capiturando o momento do click no titulo html 
+
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
 botaoAdicionar.addEventListener("click", mostraMensagem); 
  
 
 function mostraMensagem(event){  // event == controla o evento de clicar
 	event.preventDefault(); 
-	//console.log("Oi eu sou o botao e fui clicado");
+	
 
 	var form = document.querySelector("#form-adiciona"); // selecionando a área onde será manipulado os dados 
 	
-	//console.log(form.altura.value);
-	//console.log(form.peso.value);
 
-	var nome = form.nome.value; // variável nome vai receber o id="nome" e seu valor do mundo html
+
+	var nome = form.nome.value; 
 	var peso = form.peso.value;
 	var altura = form.altura.value;
 	var gordura = form.gordura.value;
 
-//	console.log(nome);
-//	console.log(peso);
-//	console.log(altura);
-//	console.log(gordura);
 
-var pacienteTr = document.createElement("tr"); // criando minha class pacientes
+var pacienteTr = document.createElement("tr"); 
 
 	var nomeTd = document.createElement("td");
 	var pesoTd = document.createElement("td");
@@ -93,19 +87,18 @@ var pacienteTr = document.createElement("tr"); // criando minha class pacientes
 	var gorduraTd = document.createElement("td");
 	var imcTd = document.createElement("td");
 
-	nomeTd.textContent = nome;// modificando o valor dentro das 
+	nomeTd.textContent = nome;
 	pesoTd.textContent = peso;
 	alturaTd.textContent = altura;
 	gorduraTd.textContent = gordura;
 
-	pacienteTr.appendChild(nomeTd); // função que vai inserir como filhos os elementos Td dentro do pai Tr
+	pacienteTr.appendChild(nomeTd); 
 	pacienteTr.appendChild(pesoTd);
 	pacienteTr.appendChild(alturaTd);
 	pacienteTr.appendChild(gorduraTd);
 
-	//console.log(pacienteTr);
-	var tabela = document.querySelector("#tabela-pacientes"); // pegando a tabela para fazer a inclusão do elementos coletas pelo javaScript
-	tabela.appendChild(pacienteTr);// tradução da linha de codigo == tabela coloca como filho o cara que eu acabei de criar  meu pacienteTr
+	var tabela = document.querySelector("#tabela-pacientes"); 
+	tabela.appendChild(pacienteTr);
 
 
 
