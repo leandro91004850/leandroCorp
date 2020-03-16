@@ -15,7 +15,7 @@ for(var i = 0; i < pacientes.length; i++){
 	var tdAltura = paciente.querySelector(".info-altura");
 	var altura = tdAltura.textContent;
 
-	var tdgordura = paciente.querySelector(".info-gordura");
+	var tdgordura = paciente.querySelector("#info-gordura");
 	var gordura = tdgordura.textContent;
 
 	var tdImc = paciente.querySelector(".info-imc");
@@ -23,10 +23,10 @@ for(var i = 0; i < pacientes.length; i++){
 	paciente.addEventListener('click', function(e) {
 			///alert(e.target.id);
 
-			if(e.target.id == peso){
-				console.log("Ops os dois valores sao iguais " + e.target.id);
+			if(e.target.id == e.target.className){
+				console.log("os valores sao iguais " + e.target.className);
 			}else{
-				console.log("voce clicou no "+ e.target.id + " o valor do peso e "+peso);
+				console.log("voce clicou no "+ e.target.id + " o valor do peso e "+e.target.className);
 
 			}
 		  			 
