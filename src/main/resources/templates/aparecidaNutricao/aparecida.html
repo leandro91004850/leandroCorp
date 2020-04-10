@@ -16,6 +16,8 @@
 		<main>
 			<section class="container">
 				<h2>Meus pacientes</h2>
+				<label for="filtrar-tabela">filtre:</label>
+				<input type="text" name="filtro" id="filtrar-tabela" placeholder="digite o nome do paciente">
 				<table>
 					<thead>
 						<tr>
@@ -46,11 +48,9 @@
 			<section class="container">
 				
 		    <h2 id="titulo-form">Adicionar novo paciente</h2>
-		    <ul id="mensagem-erro">
-		    	
-		    </ul>
-
-		    <form id= "form-adiciona">
+				<ul id="mensagens-erro"></ul>
+				
+		    <form id= "form-adiciona" method="post">
 		        <div class="">
 		            <label for="nome">Nome:</label>
 		            <input id="nome" name="nome" type="text" placeholder="digite o nome do seu paciente" class="campo">
@@ -65,16 +65,16 @@
 		        </div>
 		        <div class="grupo">
 		            <label for="gordura">% de Gordura:</label>
-		            <input id="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
+		            <input id="gordura" name="gordura" type="text" placeholder="digite a porcentagem de gordura do seu paciente" class="campo campo-medio">
 		        </div>
 
-		        <button id="adicionar-paciente" class="botao bto-principal">Adicionar</button>
+		        <button class="botao bto-principal" type="submit">Adicionar</button>
 			    </form>
 			</section>
 
 
 		<script src="js/calcula-imc.js"></script>
-		<script src="js/form.js"></script>
-
+		<script src="js/form.js"></script> <!-- form responsável por criar targ dentro do nosso html--->
+		<script src="js/filtra.js"></script>
 	</body>
 </html>

@@ -8,6 +8,7 @@ public class LeandroCorpApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LeandroCorpApplication.class, args);
+		
 	}
 
 }
