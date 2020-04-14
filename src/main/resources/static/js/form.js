@@ -1,12 +1,10 @@
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener("click", function(event) {
+botaoAdicionar.addEventListener("click", function(event) {z
     event.preventDefault();
 
     var form = document.querySelector("#form-adiciona");
 
     var paciente = obtemPacienteDoFormulario(form);
-
-    var pacienteTr = montaTr(paciente);
 
     var erros = validaPaciente(paciente);
 
@@ -16,9 +14,7 @@ botaoAdicionar.addEventListener("click", function(event) {
         return;
     }
 
-    var tabela = document.querySelector("#tabela-pacientes");
-
-    tabela.appendChild(pacienteTr);
+    adicionaPacienteNaTabela(paciente);
 
     form.reset();
 
@@ -26,6 +22,13 @@ botaoAdicionar.addEventListener("click", function(event) {
     mensagensErro.innerHTML = "";
 
 });
+
+function adicionaPacienteNaTabela(paciente){
+    var pacienteTr = montaTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+
+}
 
 function obtemPacienteDoFormulario(form) {
 
@@ -103,4 +106,18 @@ function exibeMensagensDeErro(erros) {
         li.textContent = erro;
         ul.appendChild(li);
     });
+}
+
+
+var titulo = document.querySelector(".titulo");
+titulo.addEventListener("click", mostrarMensagem); // escutando o momento do click 
+// escutando no javaScript um evento de click 
+
+function mostraMensagem(event){  // event == controla o evento de clicar
+	event.preventDefault(); 
+    console.log("Oi eu sou o botao e fui clicado");
+}
+
+function mostrarMensagem(){
+    console.log("ola eu fui clicado!")
 }
