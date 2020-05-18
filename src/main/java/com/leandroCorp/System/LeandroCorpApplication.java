@@ -12,3 +12,7 @@ public class LeandroCorpApplication {
 	}
 
 }
+
+// API
+//http://localhost:8082/nutri
+//localhost:8082/categoria/1

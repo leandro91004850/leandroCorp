@@ -30,11 +30,11 @@
 					</thead>
 					<tbody th:each="nutricao : ${nutricao}" id="tabela-pacientes">
 						<tr class="paciente" id="primeiro-paciente">
-							<td class="info-nome" th:text="${nutricao.nome}"></td>
+							<td th:id="${nutricao.nome}" class="info-nome" th:text="${nutricao.nome}"></td>
 							<td th:id="${nutricao.id}" class="info-peso" th:text="${nutricao.peso}"></td>
-							<td class="info-altura" th:text="${nutricao.altura}"></td>
+							<td th:id="${nutricao.altura}" class="info-altura" th:text="${nutricao.altura}"></td>
 							<!--https://o7planning.org/en/12373/thymeleaf-th-class-th-classappend-th-style-th-styleappend-->
-							<td th:class="${nutricao.gordura}" id="info-gordura" th:text="${nutricao.gordura}"></td>
+							<td th:id="${nutricao.gordura}" th:class="${nutricao.gordura}" id="info-gordura" th:text="${nutricao.gordura}"></td>
 							<td class="info-imc">0</td>
 						</tr>
 
