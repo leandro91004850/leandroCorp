@@ -19,8 +19,18 @@ public class Nutricao implements Serializable {
 	private Double altura;
 	private Integer gordura;
 	private String teste1;
+	private double mediaPeso;	
 	
-	
+	public double getMediaPeso() {
+		return mediaPeso;
+	}
+
+
+	public void setMediaPeso(double mediaPeso) {	
+		this.mediaPeso = mediaPeso;
+	}
+
+
 	public Integer getId() {
 		return id;
 	}
@@ -37,7 +47,7 @@ public class Nutricao implements Serializable {
 		return peso;
 	}
 	public void setPeso(Integer peso) {
-		this.peso = peso;
+		this.peso = peso+3;
 	}
 	public Double getAltura() {
 		return altura;
